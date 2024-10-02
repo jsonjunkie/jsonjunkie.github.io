@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not a Portfolio</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+            margin: 10px 0;
+            display: block;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        a::before {
+            content: "\2022  "
+        }
+        .ascii-art {
+            font-family: monospace;
+            white-space: pre;
+        }
+    </style>
+</head>
+<body>
+    <div class="ascii-art">
+ __    __  ______ ________         ______                                      
+|  \  |  \/      |        \       /      \                                     
+| $$\ | $|  $$$$$$\$$$$$$$$      |  $$$$$$\                                    
+| $$$\| $| $$  | $$ | $$         | $$__| $$                                    
+| $$$$\ $| $$  | $$ | $$         | $$    $$                                    
+| $$\$$ $| $$  | $$ | $$         | $$$$$$$$                                    
+| $$ \$$$| $$__/ $$ | $$         | $$  | $$                                    
+| $$  \$$$\$$    $$ | $$         | $$  | $$                                    
+ \$$   \$$ \$$$$$$   \$$          \$$   \$$                                    
+ _______   ______  _______ ________ ________  ______  __       ______  ______  
+|       \ /      \|       |        |        \/      \|  \     |      \/      \ 
+| $$$$$$$|  $$$$$$| $$$$$$$\$$$$$$$| $$$$$$$|  $$$$$$| $$      \$$$$$|  $$$$$$\
+| $$__/ $| $$  | $| $$__| $$ | $$  | $$__   | $$  | $| $$       | $$ | $$  | $$
+| $$    $| $$  | $| $$    $$ | $$  | $$  \  | $$  | $| $$       | $$ | $$  | $$
+| $$$$$$$| $$  | $| $$$$$$$\ | $$  | $$$$$  | $$  | $| $$       | $$ | $$  | $$
+| $$     | $$__/ $| $$  | $$ | $$  | $$     | $$__/ $| $$_____ _| $$_| $$__/ $$
+| $$      \$$    $| $$  | $$ | $$  | $$      \$$    $| $$     |   $$ \\$$    $$
+ \$$       \$$$$$$ \$$   \$$  \$$   \$$       \$$$$$$ \$$$$$$$$\$$$$$$ \$$$$$$ 
+    </div>
+    <script>
+        const parentPath = "https://jsonjunkie.github.io";
+        const folderNames = ['dodge_the_creeps_2d'];
+
+        async function generateLinks() {
+            try {
+                folderNames.forEach(folderName => {
+                    const linkText = folderName
+                    const anchor = document.createElement('a');
+                    anchor.href = `${parentPath}/${linkText}`;
+                    anchor.textContent = linkText;
+                    document.body.appendChild(anchor);
+                });
+            } catch (error) {
+                console.error('Error generating folders:', error);
+            }
+        }
+
+        generateLinks();
+    </script>
+</body>
+</html>
