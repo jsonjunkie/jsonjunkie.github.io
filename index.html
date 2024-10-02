@@ -19,9 +19,6 @@
         a:hover {
             text-decoration: underline;
         }
-        a::before {
-            content: "\2022  "
-        }
         .ascii-art {
             font-family: monospace;
             white-space: pre;
@@ -55,13 +52,27 @@
 
         async function generateLinks() {
             try {
+                const dividerContent = Array(116).fill("\u2E17").reduce((acc, val) => {
+                    return acc + val
+                })
+              
                 folderNames.forEach(folderName => {
-                    const linkText = folderName
+                    const upperDivider = document.createElement('div');
+                    upperDivider.textContent = dividerContent;
+
+                    const linkText = folderName;
                     const anchor = document.createElement('a');
                     anchor.href = `${parentPath}/${linkText}`;
                     anchor.textContent = linkText;
+
+                    document.body.appendChild(upperDivider);
                     document.body.appendChild(anchor);
+
                 });
+
+                const lowerDivider = document.createElement('div');
+                lowerDivider.textContent = dividerContent;
+                document.body.appendChild(lowerDivider);
             } catch (error) {
                 console.error('Error generating folders:', error);
             }
