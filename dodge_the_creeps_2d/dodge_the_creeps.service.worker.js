@@ -6,9 +6,9 @@
 const CACHE_VERSION = "1727844251|37543040968";
 const CACHE_PREFIX = "Dodge The Creeps-sw-cache-";
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
-const OFFLINE_URL = "dodge_the_creeps.offline.html";
+const OFFLINE_URL = "index.offline.html";
 // Files that will be cached on load.
-const CACHED_FILES = ["dodge_the_creeps.html","dodge_the_creeps.js","dodge_the_creeps.offline.html","dodge_the_creeps.icon.png","dodge_the_creeps.apple-touch-icon.png","dodge_the_creeps.worker.js","dodge_the_creeps.audio.worklet.js"];
+const CACHED_FILES = ["index.html","dodge_the_creeps.js","index.offline.html","dodge_the_creeps.icon.png","dodge_the_creeps.apple-touch-icon.png","dodge_the_creeps.worker.js","dodge_the_creeps.audio.worklet.js"];
 // Files that we might not want the user to preload, and will only be cached on first load.
 const CACHABLE_FILES = ["dodge_the_creeps.wasm","dodge_the_creeps.pck"];
 const FULL_CACHE = CACHED_FILES.concat(CACHABLE_FILES);
